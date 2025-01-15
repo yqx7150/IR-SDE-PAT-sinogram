@@ -1,0 +1,39 @@
+name: jixiongrou
+suffix: ~  # add suffix to saved images
+model: denoising
+distortion: deblur
+gpu_ids: [0]
+
+sde:
+  max_sigma: 50
+  T: 300
+  schedule: cosine # linear, cosine
+  eps: 0.0005
+  
+degradation:
+  # for denoising
+  sigma: 25
+  noise_type: G # Gaussian noise: G
+
+  # for super-resolution
+  scale: 2
+
+datasets:
+  test1:
+    name: jixiongrou-weilvbo64-1227
+    mode: LQGT
+    dataroot_GT: /home/b110/code/LZL/irsde/codes/datasets/shiyantest/jixiongrou-1227/weilvbo/GT/
+    dataroot_LQ: /home/b110/code/LZL/irsde/codes/datasets/shiyantest/jixiongrou-1227/weilvbo/64/
+
+#### network structures
+network_G:
+  which_model_G: ConditionalNAFNet
+  setting:
+    width: 64
+    enc_blk_nums: [1, 1, 1, 28]
+    middle_blk_num: 1
+    dec_blk_nums: [1, 1, 1, 1]
+
+#### path
+path:
+  pretrain_model_G: /home/b110/code/LZL/irsde/experiments/deblurring/xiaoshu64-512extract-leejh1113-300T-Lion/models/390000_G.pth

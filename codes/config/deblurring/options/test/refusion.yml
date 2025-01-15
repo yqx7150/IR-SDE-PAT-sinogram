@@ -1,0 +1,39 @@
+name: refusion
+suffix: ~  # add suffix to saved images
+model: denoising
+distortion: derain
+gpu_ids: [0]
+
+sde:
+  max_sigma: 50
+  T: 300
+  schedule: cosine # linear, cosine
+  eps: 0.0005
+  
+degradation:
+  # for denoising
+  sigma: 25
+  noise_type: G # Gaussian noise: G
+
+  # for super-resolution
+  scale: 1
+
+datasets:
+  test1:
+    name: xiaoshuextract16extract-leejh1118-300T-Lion
+    mode: LQGT
+    dataroot_GT: /home/b110/code/LZL/irsde/codes/datasets/test-irsde/xiaoshuextract/GT/
+    dataroot_LQ: /home/b110/code/LZL/irsde/codes/datasets/test-irsde/xiaoshuextract/16/
+
+#### network structures
+network_G:
+  which_model_G: ConditionalNAFNet
+  setting:
+    width: 32
+    enc_blk_nums: [1, 1, 1, 28]
+    middle_blk_num: 1
+    dec_blk_nums: [1, 1, 1, 1]
+
+#### path
+path:
+  pretrain_model_G: /home/b110/code/LZL/irsde/experiments/deblurring/xiaoshu16-512extract-leejh1112-300T-Lion/models/390000_G.pth
