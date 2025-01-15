@@ -1,34 +1,20 @@
-# GAID-PAT
+# IR-SDE-PAT-sinogram
 
-Teng Lian2,#, Yichen Lv1,2,#, Kangjun Guo1, Zilong Li1, Jiahong Li1, Guijun Wang1, Jiabing Lin1, Yiyang Cao1, Qiegen Liu1,*, Xianlin Song1,*. Generative Artificial Intelligence-Driven Ultra-Sparse Photoacoustic Tomography
+Qiegen Liu1,#, Jiahong Li1,#, Wei Li1, Guolin Liu1, Shuhao Ma1, Haipeng Wei1,Shangkun Hou1, Zilong Li1, Jiabin Lin1, Xianlin Song1,2,3,*.Ultra-Sparse Photoacoustic Tomography Reconstruction Guided by Projection-Domain Diffusion Generative Priors: Towards 16 Projections
 
+
+## The actual PAT system scheme and the algorithm optimization process for raw data.
+
+<div align="center"><img src="https://github.com/yqx7150/IR-SDE-PAT-sinogram/blob/main/Fig1.jpg"> </div>
 
 ## Forward and reverse processes of diffusion model.
 
-<div align="center"><img src="https://github.com/yqx7150/GAID-PAT/blob/main/Fig1.tif"> </div>
-
+<div align="center"><img src="https://github.com/yqx7150/IR-SDE-PAT-sinogram/blob/main/Fig2.jpg"> </div>
 
 ## Training and reconstruction process and network architecture.
 
-<div align="center"><img src="https://github.com/yqx7150/GAID-PAT/blob/main/Fig2.tif"> </div>
+<div align="center"><img src="https://github.com/yqx7150/IR-SDE-PAT-sinogram/blob/main/Fig3.jpg"> </div>
 
-
-
-## The reconstruction process of the Simulated blood vessels.
-
-<div align="center"><img src="https://github.com/yqx7150/GAID-PAT/blob/main/Fig3.tif"> </div>
-
-
-
-## The reconstruction process of the Phantom .
-
-<div align="center"><img src="https://github.com/yqx7150/GAID-PAT/blob/main/Fig4.tif"> </div>
-
-
-
-## The reconstruction process of the in vivo data.
-
-<div align="center"><img src="https://github.com/yqx7150/GAID-PAT/blob/main/Fig5.tif"> </div>
 
 
 ## Other Related Projects
